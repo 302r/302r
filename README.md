@@ -2,7 +2,7 @@
 
 
 <p align="center">
-  <img src="./henriquezitomitito_pindown.io_1789499052.gif" width="100%" alt="Olhos animados em fundo preto" />
+  <img src="https://github.com/user-attachments/assets/08fce615-443d-4959-879f-1d3d674f2ffa" width="100%" alt="Mãos animadas em fundo preto" />
 </p>
 
 
