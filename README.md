@@ -38,3 +38,13 @@
 <p align="center">
   <img src="./contribuicoes.svg" width="100%" alt="Gráfico de contribuições de 302r nos últimos 31 dias" />
 </p>
+
+
+---
+
+### Statistics
+
+<table><tr>
+<td width="28%" align="center"><img src="https://github.com/user-attachments/assets/30084dba-19f2-431e-9d16-408f993f5ef5" width="180" alt="Símbolo vermelho animado" /></td>
+<td width="72%" align="center"><img src="https://streak-stats.demolab.com/?user=302r&theme=transparent&hide_border=true&ring=B81422&fire=B81422&currStreakLabel=FFFFFF&sideLabels=FFFFFF&currStreakNum=FFFFFF&sideNums=FFFFFF&dates=8B949E" width="100%" alt="Estatísticas de 302r" /></td>
+</tr></table>
