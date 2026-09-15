@@ -66,11 +66,89 @@ jobs:
           Path(os.environ.get('GRAPH_PATH','contribuicoes.svg')).write_text('\n'.join(parts),encoding='utf-8')
           print('31 datas verificadas; valores:',values)
           PY
-      - name: Salvar gráfico
+      - name: Gerar estatísticas públicas reais
+        env:
+          PROFILE_USER: "302r"
+        run: |
+          python <<'STATS'
+          import datetime as dt
+          import json
+          import os
+          import re
+          import urllib.request
+          from pathlib import Path
+          from zoneinfo import ZoneInfo
+          
+          def fetch(url):
+              req = urllib.request.Request(url, headers={'User-Agent': 'github-profile-stats', 'Accept': 'application/json' if 'api.github.com' in url else 'text/html'})
+              with urllib.request.urlopen(req, timeout=30) as response:
+                  return response.read().decode('utf-8')
+          
+          def parse_calendar(html):
+              cells = re.findall(r'<td\b[^>]*data-date="([^"]+)"[^>]*id="([^"]+)"[^>]*>', html)
+              tips = dict(re.findall(r'<tool-tip\b[^>]*for="([^"]+)"[^>]*>(.*?)</tool-tip>', html, re.S))
+              counts = {}
+              for date, element in cells:
+                  tip = re.sub(r'<[^>]+>', '', tips.get(element, ''))
+                  match = re.search(r'(\d+) contributions?\b', tip)
+                  if match:
+                      counts[dt.date.fromisoformat(date)] = int(match.group(1))
+                  elif 'No contributions' in tip:
+                      counts[dt.date.fromisoformat(date)] = 0
+                  else:
+                      raise ValueError(f'Dados ausentes para {date}; cartão anterior preservado')
+              if not counts:
+                  raise ValueError('Calendário vazio; cartão anterior preservado')
+              return counts
+          
+          def calculate(counts, joined, today):
+              days = [joined + dt.timedelta(days=i) for i in range((today-joined).days+1)]
+              values = [counts[day] for day in days]  # Falha se houver qualquer data ausente.
+              longest = run = 0
+              for value in values:
+                  run = run + 1 if value else 0
+                  longest = max(longest, run)
+              cursor = len(values)-1
+              if values and not values[cursor]:
+                  cursor -= 1  # A sequência de ontem continua até o fim de hoje.
+              current = 0
+              while cursor >= 0 and values[cursor]:
+                  current += 1
+                  cursor -= 1
+              return sum(values), current, longest
+          
+          def main():
+              user = os.environ.get('PROFILE_USER', '302r')
+              today = dt.datetime.now(ZoneInfo('America/Sao_Paulo')).date()
+              account = json.loads(fetch(f'https://api.github.com/users/{user}'))
+              joined = dt.date.fromisoformat(account['created_at'][:10])
+              counts = {}
+              for year in range(joined.year, today.year+1):
+                  start = max(joined, dt.date(year,1,1))
+                  end = min(today, dt.date(year,12,31))
+                  counts.update(parse_calendar(fetch(f'https://github.com/users/{user}/contributions?from={start}&to={end}')))
+              total, current, longest = calculate(counts, joined, today)
+              svg = f'''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 495 195" role="img">
+          <title>Estatísticas públicas de {user}</title><desc>Total público desde {joined}: {total}. Sequência atual: {current} dias. Maior sequência: {longest} dias. Atualizado em {today}.</desc>
+          <path d="M165 28V170M330 28V170" stroke="#8b949e"/>
+          <circle cx="247.5" cy="80" r="40" fill="none" stroke="#b81422" stroke-width="4"/>
+          <path d="M245 25c-7 12 11 17 11 4 0-5-5-9-5-13 0 9-8 8-6 9Z" fill="#b81422"/>
+          <g fill="#ffffff" font-family="Segoe UI,Arial,sans-serif" text-anchor="middle">
+          <g font-size="28" font-weight="700"><text x="82.5" y="92">{total}</text><text x="247.5" y="92">{current}</text><text x="412.5" y="92">{longest}</text></g>
+          <g font-size="13"><text x="82.5" y="127">Total Contributions</text><text x="247.5" y="145" font-weight="700">Current Streak</text><text x="412.5" y="127">Longest Streak</text></g>
+          <g fill="#8b949e" font-size="10"><text x="82.5" y="151">Desde {joined:%d/%m/%Y}</text><text x="247.5" y="166">dias consecutivos</text><text x="412.5" y="151">dias consecutivos</text><text x="247.5" y="190">Dados públicos · {today:%d/%m/%Y} · atualização a cada 6h</text></g></g></svg>'''
+              Path(os.environ.get('STATS_PATH','estatisticas.svg')).write_text(svg, encoding='utf-8')
+              print(f'Dados públicos verificados: total={total}, atual={current}, maior={longest}; {len(counts)} datas')
+          
+          if __name__ == '__main__':
+              main()
+          
+          STATS
+      - name: Salvar gráfico e estatísticas
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add contribuicoes.svg
+          git add contribuicoes.svg estatisticas.svg
           if ! git diff --cached --quiet; then
             git commit -m "Atualizar gráfico de contribuições"
             git push origin HEAD:main
