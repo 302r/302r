@@ -1,19 +1,19 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 320" role="img" aria-labelledby="title desc">
 <title id="title">302r | Contribuições</title>
-<desc id="desc">Contribuições públicas de 16/08/2026 a 15/09/2026. Total: 12.</desc>
+<desc id="desc">Contribuições públicas de 16/08/2026 a 15/09/2026. Total: 14.</desc>
 <rect width="900" height="320" rx="10" fill="#0d1117"/>
 <g font-family="monospace" fill="#ffffff">
 <text x="450" y="36" text-anchor="middle" font-size="18">302r | CONTRIBUIÇÕES</text>
 <path d="M65 250.0H855" stroke="#30363d"/>
 <text x="48" y="255.0" text-anchor="end" font-size="13">0</text>
 <path d="M65 190.0H855" stroke="#30363d"/>
-<text x="48" y="195.0" text-anchor="end" font-size="13">4</text>
+<text x="48" y="195.0" text-anchor="end" font-size="13">5</text>
 <path d="M65 130.0H855" stroke="#30363d"/>
-<text x="48" y="135.0" text-anchor="end" font-size="13">8</text>
+<text x="48" y="135.0" text-anchor="end" font-size="13">10</text>
 <path d="M65 70.0H855" stroke="#30363d"/>
-<text x="48" y="75.0" text-anchor="end" font-size="13">12</text>
-<polygon points="65,250 65.0,250.0 91.3,250.0 117.7,250.0 144.0,250.0 170.3,250.0 196.7,250.0 223.0,250.0 249.3,250.0 275.7,250.0 302.0,250.0 328.3,250.0 354.7,250.0 381.0,250.0 407.3,250.0 433.7,250.0 460.0,250.0 486.3,250.0 512.7,250.0 539.0,250.0 565.3,250.0 591.7,250.0 618.0,250.0 644.3,250.0 670.7,250.0 697.0,250.0 723.3,250.0 749.7,250.0 776.0,250.0 802.3,250.0 828.7,250.0 855.0,70.0 855,250" fill="#ffffff" opacity="0.06"/>
-<polyline points="65.0,250.0 91.3,250.0 117.7,250.0 144.0,250.0 170.3,250.0 196.7,250.0 223.0,250.0 249.3,250.0 275.7,250.0 302.0,250.0 328.3,250.0 354.7,250.0 381.0,250.0 407.3,250.0 433.7,250.0 460.0,250.0 486.3,250.0 512.7,250.0 539.0,250.0 565.3,250.0 591.7,250.0 618.0,250.0 644.3,250.0 670.7,250.0 697.0,250.0 723.3,250.0 749.7,250.0 776.0,250.0 802.3,250.0 828.7,250.0 855.0,70.0" fill="none" stroke="#ffffff" stroke-width="2.5"/>
+<text x="48" y="75.0" text-anchor="end" font-size="13">15</text>
+<polygon points="65,250 65.0,250.0 91.3,250.0 117.7,250.0 144.0,250.0 170.3,250.0 196.7,250.0 223.0,250.0 249.3,250.0 275.7,250.0 302.0,250.0 328.3,250.0 354.7,250.0 381.0,250.0 407.3,250.0 433.7,250.0 460.0,250.0 486.3,250.0 512.7,250.0 539.0,250.0 565.3,250.0 591.7,250.0 618.0,250.0 644.3,250.0 670.7,250.0 697.0,250.0 723.3,250.0 749.7,250.0 776.0,250.0 802.3,250.0 828.7,250.0 855.0,82.0 855,250" fill="#ffffff" opacity="0.06"/>
+<polyline points="65.0,250.0 91.3,250.0 117.7,250.0 144.0,250.0 170.3,250.0 196.7,250.0 223.0,250.0 249.3,250.0 275.7,250.0 302.0,250.0 328.3,250.0 354.7,250.0 381.0,250.0 407.3,250.0 433.7,250.0 460.0,250.0 486.3,250.0 512.7,250.0 539.0,250.0 565.3,250.0 591.7,250.0 618.0,250.0 644.3,250.0 670.7,250.0 697.0,250.0 723.3,250.0 749.7,250.0 776.0,250.0 802.3,250.0 828.7,250.0 855.0,82.0" fill="none" stroke="#ffffff" stroke-width="2.5"/>
 <circle cx="65.0" cy="250.0" r="3" fill="#ffffff"><title>16/08: 0</title></circle>
 <circle cx="91.3" cy="250.0" r="3" fill="#ffffff"><title>17/08: 0</title></circle>
 <circle cx="117.7" cy="250.0" r="3" fill="#ffffff"><title>18/08: 0</title></circle>
@@ -44,7 +44,7 @@
 <circle cx="776.0" cy="250.0" r="3" fill="#ffffff"><title>12/09: 0</title></circle>
 <circle cx="802.3" cy="250.0" r="3" fill="#ffffff"><title>13/09: 0</title></circle>
 <circle cx="828.7" cy="250.0" r="3" fill="#ffffff"><title>14/09: 0</title></circle>
-<circle cx="855.0" cy="70.0" r="3" fill="#ffffff"><title>15/09: 12</title></circle>
+<circle cx="855.0" cy="82.0" r="3" fill="#ffffff"><title>15/09: 14</title></circle>
 <text x="65.0" y="276" text-anchor="middle" font-size="12">16/08</text>
 <text x="223.0" y="276" text-anchor="middle" font-size="12">22/08</text>
 <text x="381.0" y="276" text-anchor="middle" font-size="12">28/08</text>
