@@ -1,7 +1,7 @@
 <h1 align="center">302r</h1>
 
 <p align="center">
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=19&pause=1400&color=FFFFFF&background=0D1117&center=true&vCenter=true&width=600&height=65&lines=Python+%2F+JavaScript;Automa%C3%A7%C3%B5es+%2F+APIs+%2F+IA;Interfaces+%2F+Desktop+%2F+Experimentos" alt="Python, JavaScript, automações, APIs e IA" />
+  <img src="./intro.svg" width="600" alt="The world is yours. / devilcode" />
 </p>
 
 ---
