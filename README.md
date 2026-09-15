@@ -11,8 +11,8 @@
 </p>
 
 
----
-### TTT
+<p><img src="https://github.com/user-attachments/assets/2b457839-4917-47aa-959d-bb12e1a4deba" width="100%" alt="" /></p>
+### Tecnologias
 
 
 <p>
@@ -27,7 +27,7 @@
 </p>
 
 
-### LLL
+### Sobre meus projetos
 
 
 - **Automações:** scripts e ferramentas para simplificar tarefas.
@@ -37,26 +37,20 @@
 - **Edição e mídia:** processamento de áudio e vídeo com FFmpeg.
 - **Games:** estudos e projetos experimentais.
 
-
----
-
-
-### AAA
-
-
-<p align="center">
-  <img src="./contribuicoes.svg" width="100%" alt="Gráfico de contribuições de 302r nos últimos 31 dias" />
-</p>
-
-
-
-
----
-
+<p><img src="https://github.com/user-attachments/assets/2b457839-4917-47aa-959d-bb12e1a4deba" width="100%" alt="" /></p>
 
 ### Statistics
 
 
 <p align="center"><img src="https://github.com/user-attachments/assets/e6bb9e9d-7287-4151-8b7e-3df5699bbcce" width="28%" alt="Símbolo vermelho animado" />
 <img src="https://streak-stats.demolab.com/?user=302r&theme=transparent&hide_border=true&ring=B81422&fire=B81422&currStreakLabel=FFFFFF&sideLabels=FFFFFF&currStreakNum=FFFFFF&sideNums=FFFFFF&dates=8B949E" width="70%" alt="Estatísticas de 302r" />
+</p>
+
+<p><img src="https://github.com/user-attachments/assets/2b457839-4917-47aa-959d-bb12e1a4deba" width="100%" alt="" /></p>
+
+### Contribuições
+
+
+<p align="center">
+  <img src="./contribuicoes.svg" width="100%" alt="Gráfico de contribuições de 302r nos últimos 31 dias" />
 </p>
