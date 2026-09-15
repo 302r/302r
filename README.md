@@ -1,7 +1,7 @@
 <h1 align="center">302r</h1>
 
 <p align="center">
-  <img src="./intro.svg" width="600" alt="The world is yours. / devilcode" />
+  <img src="./intro.svg?v=08a8cf1" width="600" alt="The world is yours. / devilcode" />
 </p>
 
 ---
