@@ -1,0 +1,77 @@
+name: Atualizar gráfico de contribuições
+
+on:
+  schedule:
+    - cron: '23 */6 * * *'
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/grafico.yml'
+      - 'README.md'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: grafico-contribuicoes
+  cancel-in-progress: false
+
+jobs:
+  atualizar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Gerar gráfico com dados reais
+        env:
+          PROFILE_USER: '302r'
+        run: |
+          python <<'PY'
+          import re, datetime, os, urllib.request
+          from zoneinfo import ZoneInfo
+          from pathlib import Path
+          end=datetime.datetime.now(ZoneInfo('America/Sao_Paulo')).date()
+          start=end-datetime.timedelta(days=30)
+          user=os.environ.get('PROFILE_USER','302r')
+          url=f'https://github.com/users/{user}/contributions?from={start.isoformat()}&to={end.isoformat()}'
+          req=urllib.request.Request(url,headers={'User-Agent':'github-profile-chart','Accept':'text/html'})
+          with urllib.request.urlopen(req,timeout=30) as response:
+           html=response.read().decode('utf-8')
+          cells=re.findall(r'<td\b[^>]*data-date="([^"]+)"[^>]*id="([^"]+)"[^>]*>',html)
+          tips=dict(re.findall(r'<tool-tip\b[^>]*for="([^"]+)"[^>]*>(.*?)</tool-tip>',html,re.S))
+          counts={date: (int(re.search(r'(\d+) contribution',tips[id]).group(1)) if re.search(r'(\d+) contribution',tips[id]) else 0) for date,id in cells}
+          
+          dates=[end-datetime.timedelta(days=30-i) for i in range(31)]
+          values=[counts[d.isoformat()] for d in dates]
+          maximum=max(3,max(values))
+          print('Dados verificados:',dict(zip(map(str,dates),values)))
+          parts=['<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 320" role="img" aria-labelledby="title desc">','<title id="title">302r | Contribuições</title>',f'<desc id="desc">Contribuições públicas de {start:%d/%m/%Y} a {end:%d/%m/%Y}. Total: {sum(values)}.</desc>','<rect width="900" height="320" rx="10" fill="#0d1117"/>','<g font-family="monospace" fill="#ffffff">','<text x="450" y="36" text-anchor="middle" font-size="18">302r | CONTRIBUIÇÕES</text>']
+          for n in range(4):
+           y=250-n*180/3
+           parts += [f'<path d="M65 {y}H855" stroke="#30363d"/>',f'<text x="48" y="{y+5}" text-anchor="end" font-size="13">{round(n*maximum/3)}</text>']
+          pts=[(65+i*790/30,250-v*180/maximum) for i,v in enumerate(values)]
+          coords=' '.join(f'{x:.1f},{y:.1f}' for x,y in pts)
+          parts += [f'<polygon points="65,250 {coords} 855,250" fill="#ffffff" opacity="0.06"/>', f'<polyline points="{coords}" fill="none" stroke="#ffffff" stroke-width="2.5"/>']
+          for (x,y),d,v in zip(pts,dates,values):
+           parts += [f'<circle cx="{x:.1f}" cy="{y:.1f}" r="3" fill="#ffffff"><title>{d:%d/%m}: {v}</title></circle>']
+          for i in [0,6,12,18,24,30]:
+           parts += [f'<text x="{pts[i][0]:.1f}" y="276" text-anchor="middle" font-size="12">{dates[i]:%d/%m}</text>']
+          parts += [f'<text x="450" y="305" text-anchor="middle" fill="#8b949e" font-size="11">Dados públicos do GitHub · atualizado em {end:%d/%m/%Y}</text>','</g></svg>']
+          Path(os.environ.get('GRAPH_PATH','contribuicoes.svg')).write_text('\n'.join(parts),encoding='utf-8')
+          print('31 datas verificadas; valores:',values)
+          PY
+      - name: Salvar gráfico
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add contribuicoes.svg
+          if ! git diff --cached --quiet; then
+            git commit -m "Atualizar gráfico de contribuições"
+            git push origin HEAD:main
+          fi
