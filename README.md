@@ -12,7 +12,7 @@
 
 
 <p><img src="https://github.com/user-attachments/assets/2b457839-4917-47aa-959d-bb12e1a4deba" width="100%" alt="" /></p>
-### Tecnologias
+### TTT
 
 
 <p>
@@ -27,7 +27,7 @@
 </p>
 
 
-### Sobre meus projetos
+### PPP
 
 
 - **Automações:** scripts e ferramentas para simplificar tarefas.
@@ -39,7 +39,7 @@
 
 <p><img src="https://github.com/user-attachments/assets/2b457839-4917-47aa-959d-bb12e1a4deba" width="100%" alt="" /></p>
 
-### Statistics
+### SSS
 
 
 <p align="center"><img src="https://github.com/user-attachments/assets/e6bb9e9d-7287-4151-8b7e-3df5699bbcce" width="28%" alt="Símbolo vermelho animado" />
@@ -48,7 +48,7 @@
 
 <p><img src="https://github.com/user-attachments/assets/2b457839-4917-47aa-959d-bb12e1a4deba" width="100%" alt="" /></p>
 
-### Contribuições
+### CCC
 
 
 <p align="center">
