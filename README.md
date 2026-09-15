@@ -1,7 +1,7 @@
 <h1 align="center">302r</h1>
 
 <p align="center">
-  <img src="./henriquezitomitito_pindown.io_1789499052.gif" width="420" alt="Olhos animados em fundo preto" />
+  <img src="./henriquezitomitito_pindown.io_1789499052.gif" width="100%" alt="Olhos animados em fundo preto" />
 </p>
 
 <p align="center">
