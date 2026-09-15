@@ -44,7 +44,7 @@
 
 
 <p align="center"><img src="https://github.com/user-attachments/assets/e6bb9e9d-7287-4151-8b7e-3df5699bbcce" width="28%" alt="Símbolo vermelho animado" />
-<img src="https://streak-stats.demolab.com/?user=302r&theme=transparent&hide_border=true&ring=B81422&fire=B81422&currStreakLabel=FFFFFF&sideLabels=FFFFFF&currStreakNum=FFFFFF&sideNums=FFFFFF&dates=8B949E" width="70%" alt="Estatísticas de 302r" />
+<img src="./estatisticas.svg" width="70%" alt="Estatísticas de 302r" />
 </p>
 
 <p><img src="https://github.com/user-attachments/assets/2b457839-4917-47aa-959d-bb12e1a4deba" width="100%" alt="" /></p>
