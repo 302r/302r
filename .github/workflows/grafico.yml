@@ -49,7 +49,7 @@ jobs:
           
           dates=[end-datetime.timedelta(days=30-i) for i in range(31)]
           values=[counts[d.isoformat()] for d in dates]
-          maximum=max(3,max(values))
+          maximum=max(3,((max(values)+2)//3)*3)
           print('Dados verificados:',dict(zip(map(str,dates),values)))
           parts=['<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 320" role="img" aria-labelledby="title desc">','<title id="title">302r | Contribuições</title>',f'<desc id="desc">Contribuições públicas de {start:%d/%m/%Y} a {end:%d/%m/%Y}. Total: {sum(values)}.</desc>','<rect width="900" height="320" rx="10" fill="#0d1117"/>','<g font-family="monospace" fill="#ffffff">','<text x="450" y="36" text-anchor="middle" font-size="18">302r | CONTRIBUIÇÕES</text>']
           for n in range(4):
