@@ -136,7 +136,7 @@ jobs:
           <g fill="#ffffff" font-family="Segoe UI,Arial,sans-serif" text-anchor="middle">
           <g font-size="28" font-weight="700"><text x="82.5" y="92">{total}</text><text x="247.5" y="92">{current}</text><text x="412.5" y="92">{longest}</text></g>
           <g font-size="13"><text x="82.5" y="127">Total Contributions</text><text x="247.5" y="145" font-weight="700">Current Streak</text><text x="412.5" y="127">Longest Streak</text></g>
-          <g fill="#8b949e" font-size="10"><text x="82.5" y="151">Desde {joined:%d/%m/%Y}</text><text x="247.5" y="166">dias consecutivos</text><text x="412.5" y="151">dias consecutivos</text><text x="247.5" y="190">Dados públicos · {today:%d/%m/%Y} · atualização a cada 6h</text></g></g></svg>'''
+          </g></svg>'''
               Path(os.environ.get('STATS_PATH','estatisticas.svg')).write_text(svg, encoding='utf-8')
               print(f'Dados públicos verificados: total={total}, atual={current}, maior={longest}; {len(counts)} datas')
           
