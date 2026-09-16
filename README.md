@@ -44,7 +44,7 @@
 
 
 <p align="center"><img src="https://github.com/user-attachments/assets/e6bb9e9d-7287-4151-8b7e-3df5699bbcce" width="28%" alt="Símbolo vermelho animado" />
-<img src="./estatisticas.svg" width="70%" alt="Estatísticas de 302r" />
+<img src="./estatisticas.svg?v=clean" width="70%" alt="Estatísticas de 302r" />
 </p>
 
 <p><img src="https://github.com/user-attachments/assets/2b457839-4917-47aa-959d-bb12e1a4deba" width="100%" alt="" /></p>
