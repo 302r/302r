@@ -1,9 +1,9 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 495 195" role="img">
-<title>Estatísticas públicas de 302r</title><desc>Total público desde 2026-06-20: 28. Sequência atual: 1 dias. Maior sequência: 1 dias. Atualizado em 2026-09-16.</desc>
+<title>Estatísticas públicas de 302r</title><desc>Total público desde 2026-06-20: 28. Sequência atual: 0 dias. Maior sequência: 1 dias. Atualizado em 2026-09-17.</desc>
 <path d="M165 28V170M330 28V170" stroke="#8b949e"/>
 <circle cx="247.5" cy="80" r="40" fill="none" stroke="#b81422" stroke-width="4"/>
 <path d="M245 25c-7 12 11 17 11 4 0-5-5-9-5-13 0 9-8 8-6 9Z" fill="#b81422"/>
 <g fill="#ffffff" font-family="Segoe UI,Arial,sans-serif" text-anchor="middle">
-<g font-size="28" font-weight="700"><text x="82.5" y="92">28</text><text x="247.5" y="92">1</text><text x="412.5" y="92">1</text></g>
+<g font-size="28" font-weight="700"><text x="82.5" y="92">28</text><text x="247.5" y="92">0</text><text x="412.5" y="92">1</text></g>
 <g font-size="13"><text x="82.5" y="127">Total Contributions</text><text x="247.5" y="145" font-weight="700">Current Streak</text><text x="412.5" y="127">Longest Streak</text></g>
 </g></svg>
